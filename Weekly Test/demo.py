@@ -1,43 +1,45 @@
 # -----------------------------
-# Zomato Mini Application
+# ZOMATO MINI APPLICATION
 # -----------------------------
 
-# Tuple (fixed food categories)
-categories = ("Biryani", "Pizza", "Fast Food")
+# 1️⃣ tuple (food categories)
+food_categories = ("Biryani", "Pizza", "Burger","Hot chipps")
 
-# Set (delivery cities)
+# 2️⃣ set (delivery cities)
 delivery_cities = {"Hyderabad", "Bangalore", "Chennai"}
 
-# Dictionary (food price list)
-price_list = {
-    "Biryani": 250.0,
-    "Pizza": 180.0,
-    "Burger": 120.0
+# 3️⃣ dict (food prices)
+food_prices = {
+    "Biryani": 250.0,   # float
+    "Pizza": 180.0,    # float
+    "Burger": 120.0    # float
 }
 
-# User Inputs
+# 4️⃣ str (customer name)
 customer_name = input("Enter customer name: ")
 
-item1 = input("Enter food item 1 (Biryani/Pizza/Burger): ").title()
-item2 = input("Enter food item 2 (Biryani/Pizza/Burger): ").title()
+# 5️⃣ str (food items input)
+item1 = input("Enter food item 1: ").title()
+item2 = input("Enter food item 2: ").title()
 
+# 6️⃣ int (quantity)
 quantity = int(input("Enter quantity: "))
 
-# List (order items)
+# 7️⃣ list (ordered items)
 order_items = [item1, item2]
 
-# Price calculation with validation
-if item1 in price_list and item2 in price_list:
-    total_price = (price_list[item1] + price_list[item2]) * quantity
+# Price calculation
+if item1 in food_prices and item2 in food_prices:
+    total_bill = (food_prices[item1] + food_prices[item2]) * quantity
 else:
-    print("\n❌ Invalid food item selected")
+    print("❌ Invalid food item selected")
     exit()
 
 # Output
 print("\n🍽️ Welcome to Zomato")
 print("Customer Name:", customer_name)
-print("Food Categories:", categories)
+print("Food Categories:", food_categories)
 print("Delivery Cities:", delivery_cities)
 print("Ordered Items:", order_items)
 print("Quantity:", quantity)
-print("Total Bill Amount: ₹", total_price)
+print("Total Bill Amount: ₹", total_bill)
